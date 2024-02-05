@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #FFEFBA, #FFFFFF);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .registration-container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        .registration-container h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            color: #666;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="password"], input[type="file"], input[type="email"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #007B9A;
+        }
+
+        .login-link {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="registration-container">
+    <h1>Registration Page</h1>
+    <form action="{{url_for('registration')}}" method="POST" enctype="multipart/form-data">
+        <div>{{ message }}</div>
+        <div>
+            <label>User Name:</label>
+            <input id="username" name="username" type="text" placeholder="User Name" autocomplete="off">
+        </div>
+        <div>
+            <label>Password:</label>
+            <input id="password" name="password" type="password" placeholder="Password" autocomplete="off">
+        </div>
+        <div>
+            <label>First Name:</label>
+            <input id="firstname" name="firstname" type="text" placeholder="First Name" autocomplete="off">
+        </div>
+        <div>
+            <label>Last Name:</label>
+            <input id="lastname" name="lastname" type="text" placeholder="Last Name" autocomplete="off">
+        </div>
+        <div>
+            <label>Email:</label>
+            <input id="email" name="email" type="email" placeholder="Email" autocomplete="off">
+        </div>
+        <div>
+            <label>Upload File:</label>
+            <input type="file" id="textfile" name="textfile">
+        </div>
+        <button id="submit" name="submit">Register</button>
+    </form>
+    <div class="login-link">
+        <p>Already have an account? Please click <a href="{{url_for('login')}}">here to login</a></p>
+    </div>
+</div>
+</body>
+</html>
